@@ -44,10 +44,18 @@ body {
 
 .text--big {
     @include text(18px);
+
+    @media (max-width:768px) {
+        @include text(15px)
+    }
 }
 
 .text {
     @include text;
+
+    @media (max-width:768px) {
+        @include text(14px)
+    }
 }
 
 .link-text {
@@ -58,18 +66,34 @@ body {
 
 .text--small {
     @include text(12px);
+
+    @media (max-width:768px) {
+        @include text(11px)
+    }
 }
 
 .title--big {
     @include title(44px);
+
+    @media (max-width:768px) {
+        @include title(26px)
+    }
 }
 
 .title {
     @include title;
+
+    @media (max-width:768px) {
+        @include title(24px)
+    }
 }
 
 .title--small {
-    @include title(28px)
+    @include title(28px);
+
+    @media (max-width:768px) {
+        @include title(22px)
+    }
 }
 
 .button {
@@ -77,7 +101,6 @@ body {
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 60px;
     font-size: 18px;
     color: variaveis.$corTextoSecundario;
     background-color: variaveis.$corDeFundoBotaoPrimario;
@@ -98,6 +121,13 @@ body {
         background-color: variaveis.$corDeFundoBotaoSecundario;
         border-color: variaveis.$corDeFundoBotaoSecundario;
 
+        @media (max-width: 768px) {
+            font-size: 13px;
+            padding: 8px 11px;
+            height: 40px;
+            letter-spacing: 0;
+        }
+
         &:hover {
             background-color: lighten(variaveis.$corDeFundoBotaoSecundario, 8%);
         }
@@ -106,6 +136,13 @@ body {
     &--dark {
         background-color: rgba(variaveis.$corDeFundoBotaoDark, $alpha: .8);
         border-color: variaveis.$corTextoSecundario;
+
+        @media (max-width: 768px) {
+            font-size: 13px;
+            padding: 8px 11px;
+            height: 40px;
+            letter-spacing: 0;
+        }
 
         &:hover {
             background-color: variaveis.$corTextoSecundario;
@@ -119,6 +156,10 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
+
+    @media (max-width: 768px) {
+        display: block;
+    }
 
     img {
         max-width: 100%;
@@ -149,6 +190,12 @@ body {
             display: flex;
             flex-direction: column;
             justify-content: center;
+
+            @media (max-width: 768px) {
+                position: relative;
+                left: 0;
+                width: 100%;
+            }
         }
     }
 }
